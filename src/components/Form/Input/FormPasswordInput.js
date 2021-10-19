@@ -52,7 +52,7 @@ function FormPasswordInput({methods, validation = {}, label = '', name = '', pla
 
             {hasConfirmation ? (
                 <div className="form-input">
-                    <label htmlFor={name}>{label}</label>
+                    <label htmlFor={name}>{labelConfirmation}</label>
                     <div className="form-input__password">
                         <input
                             type="password"

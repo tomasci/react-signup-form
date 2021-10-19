@@ -1,0 +1,139 @@
+@import "src/styles/mixins";
+
+$custom_radio_border_color: #CACACA;
+$custom_radio_span_color: #5B5B5B;
+$custom_radio_border_color_active: #3C9C41;
+$form_input_border_red: #D23737;
+
+.form-radio-input {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+
+  .label {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 8px;
+    color: $custom_radio_span_color;
+  }
+
+  .form-radio-input-group {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+  }
+
+  label {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    input {
+      position: absolute;
+      left: -9999;
+      appearance: none;
+
+      &:checked + div {
+        border: 1px solid $custom_radio_border_color_active;
+
+        span {
+          color: $custom_radio_border_color_active;
+          font-weight: 700;
+        }
+
+        .icon {
+          background-color: $custom_radio_border_color_active;
+        }
+      }
+    }
+  }
+
+  &__custom {
+    //padding: 10px 0 10px 0;
+    padding: calc(10px - 1px) 0 calc(10px - 1px) 0; // border
+    width: 90px;
+
+    border: 1px solid $custom_radio_border_color;
+    box-sizing: border-box;
+    border-radius: 16px;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    transition: .1s;
+
+    span {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      color: $custom_radio_span_color;
+      margin-top: 8px;
+
+      transition: .1s;
+    }
+
+    .icon {
+      width: 32px;
+      height: 32px;
+      background-size: 32px 32px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-color: $custom_radio_span_color;
+
+      &_male {
+        mask-image: url("./assets/male.svg");
+        //background-image: url("./assets/male.svg");
+      }
+
+      &_female {
+        mask-image: url("./assets/female.svg");
+        //background-image: url("./assets/female.svg");
+      }
+
+      &_transgender {
+        mask-image: url("./assets/transgender.svg");
+        //background-image: url("./assets/transgender.svg");
+      }
+    }
+  }
+
+  &_error-message {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: $form_input_border_red;
+    margin-top: 8px;
+  }
+}
+
+@include bp-min(570px) {
+  .form-radio-input {
+    .label {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 12px;
+    }
+
+    &__custom {
+      //padding: 20px 0 18px 0;
+      padding: calc(20px - 1px) 0 calc(18px - 1px) 0; // border
+      width: 156px;
+
+      span {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+
+    &_error-message {
+      margin-top: 12px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}

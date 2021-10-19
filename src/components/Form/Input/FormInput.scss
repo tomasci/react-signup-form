@@ -1,0 +1,108 @@
+@import "src/styles/mixins";
+
+$form_input_label_gray: #5B5B5B;
+$form_input_border_gray: #C1C1C1;
+$toggle_button_background: #ffffff;
+
+$form_input_border_green: #87D78B;
+$form_input_border_red: #D23737;
+
+.form-input {
+  display: flex;
+  flex-flow: column;
+  margin-top: 20px;
+
+  label {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0 0 8px 0;
+    color: $form_input_label_gray;
+  }
+
+  input {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: $form_input_label_gray;
+    padding: calc(15px - 1px); // because of border
+    //margin: 8px 0 0 0;
+    border: 1px solid $form_input_border_gray;
+    box-sizing: border-box;
+    border-radius: 16px;
+    outline: none;
+    width: 100%;
+  }
+
+  &__password {
+    position: relative;
+
+    button {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translate(0%, -50%);
+
+      width: 30px;
+      height: 30px;
+      border: 0;
+      border-radius: 0;
+      outline: none;
+      appearance: none;
+      background: $toggle_button_background url("./assets/eye.svg");
+      cursor: pointer;
+    }
+  }
+
+  &_error-message {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: $form_input_border_red;
+    margin-top: 8px;
+  }
+
+  .validation {
+    &-error {
+      border: 1px solid $form_input_border_red;
+      color: $form_input_border_red;
+    }
+
+    &-good {
+      border: 1px solid $form_input_border_green;
+    }
+  }
+}
+
+@include bp-min(570px) {
+  .form-input {
+    margin-top: 30px;
+
+    label {
+      font-size: 18px;
+      line-height: 22px;
+      margin: 0 0 12px 0;
+    }
+
+    input {
+      padding: calc(24px - 1px); // still border
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    &__password {
+      button {
+        right: 20px;
+      }
+    }
+
+    &_error-message {
+      margin-top: 12px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}

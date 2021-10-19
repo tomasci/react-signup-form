@@ -1,0 +1,9 @@
+@import "mixins";
+
+$body_background_gray: #E5E5E5;
+
+body {
+  margin: 0;
+  padding: 0;
+  background: $body_background_gray;
+}

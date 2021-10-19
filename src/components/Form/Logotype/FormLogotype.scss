@@ -1,0 +1,28 @@
+@import "src/styles/mixins";
+
+.form-logotype {
+  margin-left: auto;
+  margin-right: auto;
+
+  $w: 54px;
+  $h: 56px;
+
+  width: $w;
+  height: $h;
+  background-size: $w $h;
+
+  text-indent: -9999px;
+
+  background-image: url("./assets/logotype.svg");
+}
+
+@include bp-min(570px) {
+  .form-logotype {
+    $w: 80px;
+    $h: 82px;
+
+    width: $w;
+    height: $h;
+    background-size: $w $h;
+  }
+}

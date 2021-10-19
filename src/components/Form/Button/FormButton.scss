@@ -1,0 +1,45 @@
+@import "src/styles/mixins";
+
+$button_text_color: #ffffff;
+$button_lightGreen: #4DB252;
+$button_green: #3C9C41;
+$button_darkGreen: #318636;
+
+.form-button {
+  margin-top: 20px;
+
+  button {
+    appearance: none;
+    border: 0;
+    color: $button_text_color;
+    background: $button_green;
+    width: 100%;
+    padding: 15px;
+    border-radius: 16px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+
+    &:hover {
+      background: $button_lightGreen;
+    }
+
+    &:active {
+      background: $button_darkGreen;
+    }
+  }
+}
+
+@include bp-min(570px) {
+  .form-button {
+    margin-top: 30px;
+
+    button {
+      padding: 24px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+}

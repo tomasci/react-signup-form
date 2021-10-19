@@ -1,0 +1,43 @@
+@import "src/styles/mixins";
+
+$p_text_color: #5B5B5B;
+$a_lightGreen: #4DB252;
+$a_green: #3C9C41;
+$a_darkGreen: #318636;
+
+.form-information {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: $p_text_color;
+  text-align: center;
+  margin: 16px 0 0 0;
+
+  a {
+    text-decoration: underline;
+    font-weight: 700;
+    color: $a_green;
+
+    &:hover {
+      color: $a_lightGreen;
+    }
+
+    &:active {
+      color: $a_darkGreen;
+    }
+  }
+}
+
+@include bp-min(570px) {
+  .form-information {
+    font-size: 18px;
+    line-height: 22px;
+    margin: 20px 0 0 0;
+
+    &:first-of-type {
+      margin: 30px 0 0 0;
+    }
+  }
+}

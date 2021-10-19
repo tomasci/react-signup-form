@@ -1,0 +1,24 @@
+@import "src/styles/mixins";
+
+$form_heading_gray: #5B5B5B;
+
+.form-heading {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+
+  color: $form_heading_gray;
+
+  padding: 0;
+  margin: 21px 0 24px 0;
+}
+
+@include bp-min(570px) {
+  .form-heading {
+    font-size: 24px;
+    line-height: 29px;
+    margin: 24px 0 35px 0;
+  }
+}

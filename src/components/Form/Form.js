@@ -70,7 +70,7 @@ function Form() {
                     required: true,
                     minLength: 6
                 }}
-                hasConfirmation={false}
+                hasConfirmation={true}
                 labelConfirmation={"Confirm password"}
             />
             <FormButton
